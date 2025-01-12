@@ -11,3 +11,6 @@ wheels/
 
 # config
 config.yaml
+
+# generated data
+*.csv
