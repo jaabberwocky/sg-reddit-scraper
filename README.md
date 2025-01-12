@@ -10,11 +10,9 @@ Simple Python package to scrape Reddit data on Singapore.
 ```yaml
 client_id: YOUR_CLIENT_ID
 client_secret: YOUR_CLIENT_SECRET
-user_agent: YOUR_USER_AGENT
-subreddits: ["singapore"]
-days_back: 1
-scrape_comments: False
 ```
+
+Replace `YOUR_CLIENT_ID` and `YOUR_CLIENT_SECRET` with your Reddit API provided credentials.
 
 3. Setup a virtual environment and install the dependencies:
 
