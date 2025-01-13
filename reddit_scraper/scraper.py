@@ -1,6 +1,6 @@
 import praw
 from datetime import datetime, timedelta, timezone
-import polars as pl
+import pandas as pd
 
 class RedditScraper:
     def __init__(self, client_id, client_secret, user_agent, subreddits, days_back=1, scrape_comments=False):
@@ -15,12 +15,12 @@ class RedditScraper:
         self.data = {'submissions': [], 'comments': []}
 
     def write_submissions_data(self, path):
-        submissions_df = pl.DataFrame(self.data['submissions'])
-        submissions_df.write_csv(path)
+        submissions_df = pd.DataFrame(self.data['submissions'])
+        submissions_df.to_csv(path, mode='a+')
 
     def write_comments_data(self, path):
-        comments_df = pl.DataFrame(self.data['comments'])
-        comments_df.write_csv(path)
+        comments_df = pd.DataFrame(self.data['comments'])
+        comments_df.to_csv(path, mode='a+')
 
     def add_submission(self, submission):
         self.data['submissions'].append(submission)
